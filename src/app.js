@@ -12,6 +12,10 @@ app.use(express.json());
 function add2(req, res, next) {
 
     //Write Your Code here
+    const queryParams=req.query
+    const sum=Number(queryParams.num)+2;
+    req.sum=sum;
+    next();
     
 }
 
@@ -19,7 +23,7 @@ app.get('/', add2, (req, res) => {
     
     //num should be replaced by num+2 from the get request route
     const data = {
-        "num" : 5 
+        num:req.sum
     };
     
     res.send(JSON.stringify(data));
