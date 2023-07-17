@@ -23,7 +23,7 @@ app.get('/', add2, (req, res) => {
     
     //num should be replaced by num+2 from the get request route
     const data = {
-        num:req.sum
+        num:req.sum,
     };
     
     res.send(JSON.stringify(data));
